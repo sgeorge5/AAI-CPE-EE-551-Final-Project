@@ -1,4 +1,4 @@
-# Personal Fitness Data Tracker & ANalyzer
+# Personal Fitness Data Tracker & Analyzer
 
 ## Team Members:
 
