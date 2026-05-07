@@ -105,8 +105,8 @@ This section explains, the steps in detail how to successfully clone this Github
 - Ensure you are still in the project root: (cd AAI-CPE-EE-551-Final-Project
   )
 - To run all the tests run this command in the terminal: pytest
-- To run a single test_data_loader.py pytest file, run this command in your terminal: pytest main_files/tests/test_data_loader.py
-- To run a single test_fitness_entry.py pytest file, run this command in your terminal: pytest main_files/tests/test_fitness_entry.py
+- To run a single test_data_loader.py pytest file, run this command in your terminal: pytest "main_files/test_data_loader.py"
+- To run a single test_fitness_entry.py pytest file, run this command in your terminal: pytest "main_files/test_fitness_entry.py"
 
 ## Main Contributions of the Team
 
