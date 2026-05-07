@@ -1,6 +1,6 @@
 import pandas as pd
-from main_files.fitness_entry import FitnessEntry
-from main_files.exceptions import InvalidFitnessEntryError, DataFormatError
+from fitness_entry import FitnessEntry
+from exceptions import InvalidFitnessEntryError, DataFormatError
 
 
 def load_fitness_data(file_path):

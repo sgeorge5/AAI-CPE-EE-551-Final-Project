@@ -14,11 +14,11 @@ Modules imported:
 - analysis: Generates fitness analysis reports.
 - visualization: Creates charts and graphs.
 """
-from data_loader import load_fitness_data
-from exceptions import DataFormatError
-from user_profile import UserProfile
-from analysis import generate_report
-from visualization import (
+from main_files.data_loader import load_fitness_data
+from main_files.exceptions import DataFormatError
+from main_files.user_profile import UserProfile
+from main_files.analysis import generate_report
+from main_files.visualization import (
     plot_steps_trend,
     plot_heart_rate_trend,
     plot_steps_histogram
