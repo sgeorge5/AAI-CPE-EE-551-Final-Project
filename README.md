@@ -32,25 +32,22 @@ The Personal Fitness Data Tracker & Analyzer solves this problem by providing an
 
 ### 4. File & Module Structure
 
-1. AAI-CPE-EE-551-Final-Project/
+AAI-CPE-EE-551-Final-Project/
 
-2. main.ipynb # Jupyter notebook - interactive program execution
-3. main.py # Python script - non-interactive program execution
-
-4. fitness_entry.py # FitnessEntry class - single day's fitness record
-5. user_profile.py # UserProfile class - collection of FitnessEntry objects
-6. data_loader.py # CSV loading with column validation and error handling
-7. analysis.py # Statistical calculations (averages, peaks, std dev)
-8. visualization.py # Matplotlib plots (trend lines, histogram)
-9. utils.py # Helper functions (map/filter, recursion, generator)
-10. exceptions.py # Custom exceptions for data errors
-
-11. tracker_fitness_data.csv # Input dataset (fitness tracker records)
-
-12. tests/
-    - test_data_loader.py # Unit tests for CSV loading functions
-    - test_fitness_entry.py # Unit tests for FitnessEntry validation
-13. README.md # Project documentation
+ - main.ipynb                 # Jupyter notebook - interactive program execution
+ -  main.py                    # Python script - non-interactive program execution
+ -  fitness_entry.py           # FitnessEntry class - single day's fitness record
+ -  user_profile.py            # UserProfile class - collection of FitnessEntry object
+ -  data_loader.py             # CSV loading with column validation and error handling
+ -  analysis.py                # Statistical calculations (averages, peaks, std dev)
+ -  visualization.py           # Matplotlib plots (trend lines, histogram)
+ -  utils.py                   # Helper functions (map/filter, recursion, generator
+ -  exceptions.py              # Custom exceptions for data errors
+ -  tracker_fitness_data.csv   # Input dataset (fitness tracker records)
+ -  tests/
+     - test_data_loader.py    # Unit tests for CSV loading functions
+     - test_fitness_entry.py  # Unit tests for FitnessEntry validation
+ - README.md                  # Project documentation
 
 ### 5. Key Features Implemented
 
