@@ -1,3 +1,19 @@
+"""
+Main entry point for the fitness tracker analysis program.
+
+1. Loads fitness tracking data from a CSV file.
+2. Creates user profiles for multiple users.
+3. Assigns fitness entries to users.
+4. Generates summary reports.
+5. Displays visualizations for fitness trends.
+
+Modules imported:
+- data_loader: Handles loading fitness data from files.
+- exceptions: Contains custom exception classes.
+- user_profile: Defines the UserProfile class.
+- analysis: Generates fitness analysis reports.
+- visualization: Creates charts and graphs.
+"""
 from data_loader import load_fitness_data
 from exceptions import DataFormatError
 from user_profile import UserProfile
