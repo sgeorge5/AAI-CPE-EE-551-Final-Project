@@ -16,7 +16,7 @@ This section explains, the steps in detail how to successfully clone this Github
 
 - It is recommended to use git for this part (Download Link for Git: https://git-scm.com/)
 - Open VS Code (or your preferred IDE/terminal)
-- In the terminal, choose a folder or create a new onw for where you would like the project to be saved/cloned
+- In the terminal, choose a folder or create a new one for where you would like the project to be saved/cloned
 - Run this command to clone the entire repository: git clone https://github.com/sgeorge5/AAI-CPE-EE-551-Final-Project.git
 - navigate/change into the project directory by using the command: cd AAI-CPE-EE-551-Final-Project
 - Inside the project directory should contain a folder named "main files" and a README.md file
@@ -28,30 +28,30 @@ This section explains, the steps in detail how to successfully clone this Github
 
 - In the terminal after you cloned the repository, type: code .
 - This opens the project in VSCode.
-- If you are having issues, then you can manually open the cloned project folder in VSCode. By naviagting File -> Open Folder and opening the folder where you saved the cloned repository.
+- If you are having issues, then you can manually open the cloned project folder in VSCode. By navigating File -> Open Folder and opening the folder where you saved the cloned repository.
 
 ### 3. Running the interactive notebook (main.ipynb)
 
-- Once you have sucessfully cloned this repository, navigate to the AAI-CPE-EE-551-FINAL-PROJECT -> main files -> main.ipynb
-- In your preffered compiler, open the main.ipynb.
+- Once you have successfully cloned this repository, navigate to the AAI-CPE-EE-551-FINAL-PROJECT -> main files -> main.ipynb
+- In your preferred compiler, open the main.ipynb.
 - Select a Python Kernel if prompted (your installed python environment)
 - Run the cells in order (You can click "Run All" at the top of the notebook or run each cell individually by using the Run Cell button on each cell.)
-- As you run the main.ipynb noteboook the respective outputs will appear under each cell. Additionally, Plots and visualizations will appear inline in the notebook.
+- As you run the main.ipynb notebook the respective outputs will appear under each cell. Additionally, Plots and visualizations will appear inline in the notebook.
 
 ### 4. Running the main script (main.py)
 
 - Make sure you are in the project root folder in the terminal(cd AAI-CPE-EE-551-Final-Project
   )
 - Execute the script: python main.py
-- This program will load tracher_fitness_data.csv, create user profiles, Generate reports, Display visualizations all in the terminal window.
+- This program will load tracher_fitness_data.csv, create user profiles, generate reports, and display visualizations all in the terminal window.
 - Unlike main.ipynb, this version is non-interactive
 
 ### 5. Run Tests with pytest
 
 - To run the pytest file under the test folder (test_data_loader.py and test_fitness_entry.py).
-- Ensure you are still in teh project root: (cd AAI-CPE-EE-551-Final-Project
+- Ensure you are still in the project root: (cd AAI-CPE-EE-551-Final-Project
   )
-- To run all the tests run this commant in the terminal: pytest
+- To run all the tests run this command in the terminal: pytest
 - To run a single test_data_loader.py pytest file, run: pytest tests/test_data_loader.py
 - To run a single test_fitness_entry.py pytest file, run: pytest tests/test_fitness_entry.py
 
