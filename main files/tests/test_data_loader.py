@@ -32,3 +32,25 @@ def test_missing_column(tmp_path):
     #expects DataFormatError due to missing columns
     with pytest.raises(DataFormatError):
         load_fitness_data(str(p))
+
+def test_load_valid_data(tmp_path):
+    """
+    Checks that properly formatted CSV loads correctly into FitnessEntry objects.
+    This verifies that we get one entry of the right type. 
+    """
+    #creates complete dataframe with all the required columns
+    df = pd.DataFrame({
+        "date":["1/1/2023"],
+        "heart_rate_avg":[70],
+        "steps":[1000],
+        "calories_burned":[50.0],
+        "active_minutes":[10.0]
+    })
+    p = tmp_path / "good.csv"
+    df.to_csv(p, index=False)
+    #loads the data from temp file
+    entries = load_fitness_data(str(p))
+    #ensures only one entry was created
+    assert len(entries) == 1
+    #ensures that entry is a FitnessEntry object only
+    assert isinstance(entries[0], FitnessEntry)
