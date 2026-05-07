@@ -7,7 +7,9 @@
 - Aayush Gunjal (Stevens ID: 10479416 , E-mail: agunjal@stevens.edu),
 
 ## Project Description
-
+Modular Python application: 
+- loads fitness‑tracking data, processes it, and generates both textual reports and visualizations for multiple users.
+- combines data processing, object‑oriented design, error handling, and basic data visualization into a cohesive analytics pipeline.
 ## How to Run Program
 
 ## Main Contributions of the Team
