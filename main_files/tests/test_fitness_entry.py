@@ -1,6 +1,6 @@
 import pytest
-from fitness_entry import FitnessEntry
-from fitness_entry import InvalidFitnessEntryError
+from main_files.fitness_entry import FitnessEntry
+from main_files.fitness_entry import InvalidFitnessEntryError
 
 
 def test_valid_entry():

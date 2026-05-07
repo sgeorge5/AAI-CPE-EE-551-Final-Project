@@ -1,8 +1,8 @@
 import pytest
 import pandas as pd
-from data_loader import load_fitness_data
-from exceptions import DataFormatError
-from fitness_entry import FitnessEntry
+from main_files.data_loader import load_fitness_data
+from main_files.exceptions import DataFormatError
+from main_files.fitness_entry import FitnessEntry
 
 def test_missing_file():
     """

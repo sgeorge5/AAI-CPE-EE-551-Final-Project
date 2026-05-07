@@ -1,4 +1,4 @@
-from exceptions import InvalidFitnessEntryError
+from main_files.exceptions import InvalidFitnessEntryError
 
 class FitnessEntry:
     """
