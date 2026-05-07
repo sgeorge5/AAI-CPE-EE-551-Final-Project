@@ -8,6 +8,51 @@
 
 ## Project Description
 
+### 1. Problem Overview
+Wearable fitness trackers collect large amounts of health data daily including steps, heart rate, calories burned, and active minutes. However, most users never analyze this data beyond glancing at their daily step count. The raw CSV files exported from these devices are overwhelming and difficult to interpret. Users cannot easily identify patterns, detect irregular heart rates, or track their fitness progress over time. This creates a gap between data collection and actionable health insights.
+
+### 2. Solution Approach
+The Personal Fitness Data Tracker & Analyzer solves this problem by providing an automated Python program that reads raw fitness tracker data, validates it for consistency, and produces both statistical summaries and visual trends. The program follows six steps:
+- Data Loading: Uses pandas to read CSV files containing fitness records. Handles missing files and malformed data with custom exceptions.
+- Data Validation: Each record is validated as a FitnessEntry object. Negative step counts, invalid heart rates, and incorrect date formats are rejected with error messages.
+- Data Storage: Valid entries are stored in a UserProfile class which provides methods for adding, removing, filtering, and retrieving entries by date.
+- Statistical Analysis: The program computes averages (heart rate, steps, calories, walking time), peak values, and standard deviations to quantify variability in fitness patterns.
+- Data Visualization: Matplotlib generates three plots: daily steps trend line, daily heart rate trend line, and a histogram showing step count distribution.
+- Reporting: A formatted summary report is printed to the console giving users immediate insight into their fitness data without manually sifting through CSV files.
+
+### 3. Dependencies and Libraries
+- pandas (2.0+): Reading and parsing the CSV fitness data file
+- matplotlib (3.7+): Generating trend line plots and histograms
+- numpy (1.24+): Calculating mean and standard deviation for statistics
+- pytest (7.0+): Running unit tests to validate data loading and entry logic
+
+### 4. File & Module Structure
+1. main.ipynb                 # Jupyter notebook - interactive program execution
+2. main.py                    # Python script - non-interactive program execution
+3. fitness_entry.py           # FitnessEntry class - single day's fitness record
+4. user_profile.py            # UserProfile class - collection of FitnessEntry objects
+5. data_loader.py             # CSV loading with column validation and error handling
+6. analysis.py                # Statistical calculations (averages, peaks, std dev)
+7. visualization.py           # Matplotlib plots (trend lines, histogram)
+8. utils.py                   # Helper functions (map/filter, recursion, generator)
+9. exceptions.py              # Custom exceptions for data errors
+10. tracker_fitness_data.csv   # Input dataset (fitness tracker records)
+11. tests
+    - test_data_loader.py    # Unit tests for CSV loading functions
+    - test_fitness_entry.py  # Unit tests for FitnessEntry validation
+13. README.md                  # Project documentation
+
+### 5. Key Features Implemented
+- Data Validation: FitnessEntry constructor checks date format and numeric ranges (heart rate greater than or equal to 0, steps greater than or equal to 0, etc.)
+- Exception Handling: FileNotFoundError, DataFormatError, and InvalidFitnessEntryError are caught and handled gracefully
+- Operator Overloading: add sums two entries, eq compares entries, len returns entry count
+- Functional Programming: map and lambda for step-to-miles conversion, filter and lambda for high heart rate filtering
+- List Comprehension: Extracting step counts from entries into a single list
+- Recursion: recursive_sum_steps sums the first n entries steps recursively
+- Generator: iter_heart_rates yields heart rates one at a time without storing all in memory
+- Visualization: Line plots for step and heart rate trends, histogram for step distribution
+
+
 ## How to Run Program
 
 This section explains, the steps in detail how to successfully clone this Github repository and run the program:
