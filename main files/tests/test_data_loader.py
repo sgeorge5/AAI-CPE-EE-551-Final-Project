@@ -1,72 +1,57 @@
 import pytest
+import pandas as pd
+from data_loader import load_fitness_data
+from exceptions import DataFormatError
 from fitness_entry import FitnessEntry
-from fitness_entry import InvalidFitnessEntryError
 
-
-def test_valid_entry():
+def test_missing_file():
     """
-    Checks that FitnessEntry constructor works correctly with stadard ideal values.
-    This verifies that all five attributes are stored properly.
+    Checks that load_fitness_data raises FileNotFoundError when the CSV doesnt exist.
+    This prevents the program from crashing with errors when the file is missing
     """
-    #creates entry using valid numbers
-    e = FitnessEntry("2024-01-01", 70, 5000, 300, 30)
-    #checks that each attribute matches what we passed in
-    assert e.date == "2024-01-01"
-    assert e.heart_rate == 70
-    assert e.steps == 5000
-    assert e.calories == 300
-    assert e.walking_time == 30
+    #attempts to load a file that doesn't exist (error is expected to be raised)
+    with pytest.raises(FileNotFoundError):
+        load_fitness_data("does_not_exist.csv")
 
-
-def test_invalid_heart_rate():
+def test_missing_column(tmp_path):
     """
-    Checks that InvalidFitnessEntryError is raised when heart rate is negative.
-    Heart rate cant be negative in real life so we reject it.
+    Checks that DataFormatError is raised when the CSV is missing the required columns.
+    These dates are: data, heart_rate_avg, steps, calories_burned, and active_minutes.
+    Then a tmp_path fixture is used to create a temporary file that gets deleted after the test.
     """
-    #negative heart rate triggers validation error
-    with pytest.raises(InvalidFitnessEntryError):
-        FitnessEntry("2024-01-01", -10, 5000, 300, 30)
+    #creates dataframe missing calories_burned and active_minutes columns
+    df = pd.DataFrame({
+        "date": ["2023-01-01"],
+        "heart_rate_avg": [70],
+        "steps": [1000],
+    })
+
+    #saves incomplete dataframe to temp csv file
+    p = tmp_path / "bad.csv"
+    df.to_csv(p, index=False)
+    #expects DataFormatError due to missing columns
+    with pytest.raises(DataFormatError):
+        load_fitness_data(str(p))
 
 
-
-def test_invalid_steps():
+def test_load_valid_data(tmp_path):
     """
-    Checks that InvalidFitnessEntryError is raised when steps is negative.
-    Steps count cant be negative - you cant take negative steps.
+    Checks that properly formatted CSV loads correctly into FitnessEntry objects.
+    This verifies that we get one entry of the right type. 
     """
-    #negative steps triggers validation error
-    with pytest.raises(InvalidFitnessEntryError):
-        FitnessEntry("2024-01-01", 70, -100, 300, 30)
-        
-
-
-def test_str_method():
-    """
-    Checks that the __str__ method returns a readable string with date and steps.
-    User should see something meaningful when they print an entry.
-    """
-    e = FitnessEntry("2024-01-01", 70, 5000, 300, 30)
-    s = str(e)
-    #verifies date appears in the string output
-    assert "2024-01-01" in s
-    #verifies step count appears in the string output
-    assert "5000" in s
-
-
-def test_add_entries():
-    """
-    Checks that the + operator correctly adds two FitnessEntry objects together.
-    Numeric fields (heart rate, steps, calories, walking time) then get summed.
-    Date field keeps the first entrys date
-    """
-    e1 = FitnessEntry("2024-01-01", 70, 5000, 300, 30)
-    e2 = FitnessEntry("2024-01-02", 80, 6000, 350, 40)
-
-    #uses + operator to combine entries
-    e3 = e1 + e2
-
-    #verfies that all numeric fields were added correctly
-    assert e3.heart_rate == 150
-    assert e3.steps == 11000
-    assert e3.calories == 650
-    assert e3.walking_time == 70
+    #creates complete dataframe with all the required columns
+    df = pd.DataFrame({
+        "date":["1/1/2023"],
+        "heart_rate_avg":[70],
+        "steps":[1000],
+        "calories_burned":[50.0],
+        "active_minutes":[10.0]
+    })
+    p = tmp_path / "good.csv"
+    df.to_csv(p, index=False)
+    #loads the data from temp file
+    entries = load_fitness_data(str(p))
+    #ensures only one entry was created
+    assert len(entries) == 1
+    #ensures that entry is a FitnessEntry object only
+    assert isinstance(entries[0], FitnessEntry)
