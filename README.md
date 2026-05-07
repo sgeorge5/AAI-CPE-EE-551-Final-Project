@@ -32,7 +32,7 @@ The Personal Fitness Data Tracker & Analyzer solves this problem by providing an
 
 ### 4. File & Module Structure
 
-1. AAI-CPE-EE-551-Final-Project/
+AAI-CPE-EE-551-Final-Project/
 
  - main.ipynb                 # Jupyter notebook - interactive program execution
  -  main.py                    # Python script - non-interactive program execution
