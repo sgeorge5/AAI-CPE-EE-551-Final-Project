@@ -33,6 +33,7 @@ def test_missing_column(tmp_path):
     with pytest.raises(DataFormatError):
         load_fitness_data(str(p))
 
+
 def test_load_valid_data(tmp_path):
     """
     Checks that properly formatted CSV loads correctly into FitnessEntry objects.
