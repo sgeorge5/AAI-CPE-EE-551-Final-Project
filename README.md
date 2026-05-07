@@ -1,3 +1,5 @@
 # AAI-CPE-EE-551-Final-Project
 
-bleh
+# Fitness Activity Data Analysis System
+
+## Team Members
