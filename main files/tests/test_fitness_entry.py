@@ -27,6 +27,8 @@ def test_invalid_heart_rate():
     with pytest.raises(InvalidFitnessEntryError):
         FitnessEntry("2024-01-01", -10, 5000, 300, 30)
 
+
+
 def test_invalid_steps():
     """
     Checks that InvalidFitnessEntryError is raised when steps is negative.
@@ -68,4 +70,3 @@ def test_add_entries():
     assert e3.steps == 11000
     assert e3.calories == 650
     assert e3.walking_time == 70
-
