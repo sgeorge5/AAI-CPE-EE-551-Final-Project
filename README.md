@@ -34,20 +34,20 @@ The Personal Fitness Data Tracker & Analyzer solves this problem by providing an
 
 AAI-CPE-EE-551-Final-Project/
 
- - main.ipynb                 # Jupyter notebook - interactive program execution
- -  main.py                    # Python script - non-interactive program execution
- -  fitness_entry.py           # FitnessEntry class - single day's fitness record
- -  user_profile.py            # UserProfile class - collection of FitnessEntry object
- -  data_loader.py             # CSV loading with column validation and error handling
- -  analysis.py                # Statistical calculations (averages, peaks, std dev)
- -  visualization.py           # Matplotlib plots (trend lines, histogram)
- -  utils.py                   # Helper functions (map/filter, recursion, generator
- -  exceptions.py              # Custom exceptions for data errors
- -  tracker_fitness_data.csv   # Input dataset (fitness tracker records)
- -  tests/
-     - test_data_loader.py    # Unit tests for CSV loading functions
-     - test_fitness_entry.py  # Unit tests for FitnessEntry validation
- - README.md                  # Project documentation
+- main.ipynb # Jupyter notebook - interactive program execution
+- main.py # Python script - non-interactive program execution
+- fitness_entry.py # FitnessEntry class - single day's fitness record
+- user_profile.py # UserProfile class - collection of FitnessEntry object
+- data_loader.py # CSV loading with column validation and error handling
+- analysis.py # Statistical calculations (averages, peaks, std dev)
+- visualization.py # Matplotlib plots (trend lines, histogram)
+- utils.py # Helper functions (map/filter, recursion, generator
+- exceptions.py # Custom exceptions for data errors
+- tracker_fitness_data.csv # Input dataset (fitness tracker records)
+- tests/
+  - test_data_loader.py # Unit tests for CSV loading functions
+  - test_fitness_entry.py # Unit tests for FitnessEntry validation
+- README.md # Project documentation
 
 ### 5. Key Features Implemented
 
@@ -85,6 +85,7 @@ This section explains, the steps in detail how to successfully clone this Github
 ### 3. Running the interactive notebook (main.ipynb)
 
 - Once you have successfully cloned this repository, navigate to the AAI-CPE-EE-551-FINAL-PROJECT -> main files -> main.ipynb
+- Before running the code install all the required libraries for this project by using this command in your terminal: pip install numpy pandas matplotlib pytest
 - In your preferred compiler, open the main.ipynb.
 - Select a Python Kernel if prompted (your installed python environment)
 - Run the cells in order (You can click "Run All" at the top of the notebook or run each cell individually by using the Run Cell button on each cell.)
@@ -104,8 +105,8 @@ This section explains, the steps in detail how to successfully clone this Github
 - Ensure you are still in the project root: (cd AAI-CPE-EE-551-Final-Project
   )
 - To run all the tests run this command in the terminal: pytest
-- To run a single test_data_loader.py pytest file, run: pytest main_files/tests/test_data_loader.py
-- To run a single test_fitness_entry.py pytest file, run: pytest main_files/tests/test_fitness_entry.py
+- To run a single test_data_loader.py pytest file, run this command in your terminal: pytest main_files/tests/test_data_loader.py
+- To run a single test_fitness_entry.py pytest file, run this command in your terminal: pytest main_files/tests/test_fitness_entry.py
 
 ## Main Contributions of the Team
 
