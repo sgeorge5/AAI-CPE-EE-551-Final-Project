@@ -67,3 +67,27 @@ def plot_heart_rate_trend(entries):
 
     plt.tight_layout()
     plt.show()
+
+
+def plot_steps_histogram(entries):
+    """
+    Takes in fitness entries list & draws histogram to show how step counts are distributed.
+    Then it splits steps into 10 bins to make it visually clear if steps cluster 
+    around certain ranges
+    """
+    #list is checked if empty to avoid plotting nothing
+    if len(entries) == 0:
+        print("No entries to plot.")
+        return
+
+    #extracts only the step counts from all the entries into one list
+    steps = [e.steps for e in entries]
+
+    plt.figure(figsize=(8, 4))
+    #creates a histogram with 10 bins, colored green with black outlines
+    plt.hist(steps, bins=10, color="green", edgecolor="black")
+    plt.title("Steps Distribution")
+    plt.xlabel("Steps")
+    plt.ylabel("Frequency")
+    plt.tight_layout()
+    plt.show()
