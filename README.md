@@ -11,20 +11,20 @@
 ## How to Run Program
 
 ## Main Contributions of the Team
-Shaun 
-focused program structure and class design.
-added the required special methods. 
-Implemented loops and conditional statements 
-Ensured that all classes and methods contained proper docstring and comments.
+Shaun: 
+- focused program structure and class design.
+- added the required special methods. 
+- Implemented loops and conditional statements 
+- Ensured that all classes and methods contained proper docstring and comments.
 
-Miguel 
-handled the data processing and external library integration. 
-implemented the required data input and output features
-developed functions that processed and analyzed the data. 
-wrote pytest cases
+Miguel: 
+- handled the data processing and external library integration. 
+- implemented the required data input and output features
+- developed functions that processed and analyzed the data. 
+- wrote pytest cases
 
 Aayush:
-Error handling, documentation, and project organization. 
-implemented at least two exception-handling scenarios to improve program reliability. 
-organized the file structure.
-finalized the README file.
+- Error handling, documentation, and project organization. 
+- implemented at least two exception-handling scenarios to improve program reliability. 
+- organized the file structure.
+- finalized the README file.
