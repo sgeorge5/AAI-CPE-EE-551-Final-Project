@@ -95,7 +95,7 @@ This section explains, the steps in detail how to successfully clone this Github
 - Make sure you are in the project root folder in the terminal(cd AAI-CPE-EE-551-Final-Project
   )
 - Execute the script: python main.py
-- This program will load tracher_fitness_data.csv, create user profiles, generate reports, and display visualizations all in the terminal window.
+- This program will load tracker_fitness_data.csv, create user profiles, generate reports, and display visualizations all in the terminal window.
 - Unlike main.ipynb, this version is non-interactive
 
 ### 5. Run Tests with pytest
