@@ -1,4 +1,4 @@
-# Personal Fitness Data Tracker & ANalyzer
+# Personal Fitness Data Tracker & Analyzer
 
 ## Team Members:
 
@@ -8,7 +8,7 @@
 
 ## Project Description
 Modular Python application: 
-- loads fitness‑tracking data, processes it, and generates both textual reports and visualizations for multiple users.
+- tracks fitness data, processes it, and generates both textual reports and visualizations for multiple users.
 - combines data processing, object‑oriented design, error handling, and basic data visualization into a cohesive analytics pipeline.
 ## How to Run Program
 
